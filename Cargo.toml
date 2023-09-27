@@ -1,0 +1,13 @@
+[package]
+name = "polars-azure-io"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+azure_core = "0.15.0"
+log = "0.4.20"
+object_store = "0.7.0"
+polars = { version = "0.33.2", features = ["azure", "csv", "polars-io", "cloud", "parquet"] }
+simplelog = "0.12.1"
