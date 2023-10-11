@@ -1,0 +1,17 @@
+[package]
+name = "polars-azure-io"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-trait = "0.1.73"
+aws-config = "0.56.1"
+aws-credential-types = "0.56.1"
+azure_core = "0.15.0"
+log = "0.4.20"
+object_store = { version = "0.7.0", features = ["aws"] }
+polars = { version = "0.33.2", features = ["azure", "csv", "polars-io", "cloud", "parquet"] }
+simplelog = "0.12.1"
+tokio = { version = "1.33.0", features = ["macros", "rt-multi-thread"] }
