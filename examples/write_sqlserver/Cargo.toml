@@ -1,0 +1,12 @@
+[package]
+name = "polars-sqlserver-write"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+arrow-odbc = "1.1.0"
+log = "0.4.20"
+polars = "0.33.2"
+simplelog = "0.12.1"
