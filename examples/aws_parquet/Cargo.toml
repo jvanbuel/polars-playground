@@ -12,6 +12,21 @@ aws-credential-types = "0.56.1"
 azure_core = "0.15.0"
 log = "0.4.20"
 object_store = { version = "0.7.0", features = ["aws"] }
-polars = { version = "0.33.2", features = ["azure", "csv", "polars-io", "cloud", "parquet"] }
+polars = { version = "0.33.2", features = [
+    "azure",
+    "csv",
+    "polars-io",
+    "cloud",
+    "parquet",
+] }
 simplelog = "0.12.1"
 tokio = { version = "1.33.0", features = ["macros", "rt-multi-thread"] }
+
+
+[[bin]]
+name = "profile"
+path = "src/profile/main.rs"
+
+[[bin]]
+name = "env"
+path = "src/env/main.rs"
