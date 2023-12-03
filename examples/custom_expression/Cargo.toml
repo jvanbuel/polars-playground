@@ -16,5 +16,4 @@ polars-ffi = { version = "0.35" }
 polars-plan = { version = "0.35" }
 polars-lazy = { version = "0.35" }
 pyo3-polars = { version = "*", features = ["derive"] }
-regex = "1.10.2"
 pyo3 = { version = "0.20", features = ["extension-module"] }

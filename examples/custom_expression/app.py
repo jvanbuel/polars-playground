@@ -1,4 +1,5 @@
 import polars as pl
+
 from polars_casing import Casing  # noqa: F401, F403
 
 df = pl.DataFrame(

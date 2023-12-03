@@ -917,7 +917,6 @@ dependencies = [
  "polars-plan",
  "pyo3",
  "pyo3-polars",
- "regex",
 ]
 
 [[package]]

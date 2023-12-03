@@ -12,14 +12,14 @@ class Casing:
         self._expr = expr
 
     def pascal_case(self) -> pl.Expr:
-        return self._expr._register_plugin(
+        return self._expr.register_plugin(
             lib=lib,
             symbol="pascal_case",
             is_elementwise=True,
         )
 
     def snake_case(self) -> pl.Expr:
-        return self._expr._register_plugin(
+        return self._expr.register_plugin(
             lib=lib,
             symbol="snake_case",
             is_elementwise=True,

@@ -15,6 +15,8 @@ wonderwords = "^2.2.0"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.27.1"
+pytest-benchmark = "^4.0.0"
+isort = "^5.12.0"
 
 [build-system]
 requires = ["maturin>=1.0,<2.0"]
