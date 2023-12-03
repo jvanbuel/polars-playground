@@ -1,12 +1,18 @@
 import polars as pl
-from polars_casing import Casing  # noqa: F401
+from polars_casing import Casing  # noqa: F401, F403
 
 df = pl.DataFrame(
     {
-        "convert": ["my variable", "polars is cool", "expressions are tha bomb", "i love rust"],
+        "convert": [
+            "my variable",
+            "polars is cool",
+            "expressions are tha bomb",
+            "i love rust",
+        ],
     }
 )
 
+print(df)
 
 out = df.with_columns(
     camel_case=pl.col("convert").casing.camel_case(),

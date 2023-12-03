@@ -1,5 +1,5 @@
 import polars as pl
-from polars.type_aliases import IntoExpr  # noqa: F401
+from polars.type_aliases import IntoExpr # noqa: F401
 from polars.utils.udfs import _get_shared_lib_location
 
 # boilerplate needed to inform polars of the location of binary wheel.
@@ -24,7 +24,7 @@ class Casing:
             symbol="camel_case",
             is_elementwise=True,
         )
-    
+
     def snake_case(self) -> pl.Expr:
         return self._expr._register_plugin(
             lib=lib,
