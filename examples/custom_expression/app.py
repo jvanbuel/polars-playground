@@ -15,7 +15,7 @@ df = pl.DataFrame(
 print(df)
 
 out = df.with_columns(
-    camel_case=pl.col("convert").casing.camel_case(),
+    pascal_case=pl.col("convert").casing.pascal_case(),
     snake_case=pl.col("convert").casing.snake_case(),
 )
 
