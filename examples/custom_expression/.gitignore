@@ -1,4 +1,6 @@
 __pycache__
+*.svg
 target
 .venv
 *.so
+.DS_Store

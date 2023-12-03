@@ -3,6 +3,8 @@ from wonderwords import RandomSentence
 import pytest
 from polars_casing import Casing  # noqa: F401, F403
 
+SIZES = [10, 100, 1000, 10000]
+
 
 def get_df(N: int = 1000) -> pl.DataFrame:
     s = RandomSentence()
@@ -21,14 +23,16 @@ def to_pascal_case(df: pl.DataFrame) -> pl.DataFrame:
 
 
 @pytest.mark.benchmark(group="pascal")
-def test_polars_pascal_casing(benchmark):
-    df = get_df()
+@pytest.mark.parametrize("N", SIZES)
+def test_polars_pascal_casing(benchmark, N):
+    df = get_df(N)
     benchmark(to_pascal_case, df)
 
 
 @pytest.mark.benchmark(group="pascal")
-def test_naive_python_pascal_casing(benchmark):
-    df = get_df()
+@pytest.mark.parametrize("N", SIZES)
+def test_naive_python_pascal_casing(benchmark, N):
+    df = get_df(N)
     benchmark(
         lambda df: df.with_columns(
             pascal_case=pl.col("random_sentence").map_elements(
@@ -40,8 +44,9 @@ def test_naive_python_pascal_casing(benchmark):
 
 
 @pytest.mark.benchmark(group="snake")
-def test_polars_snake_casing(benchmark):
-    df = get_df()
+@pytest.mark.parametrize("N", SIZES)
+def test_polars_snake_casing(benchmark, N):
+    df = get_df(N)
     benchmark(
         lambda df: df.with_columns(
             snake_case=pl.col("random_sentence").casing.snake_case(),
@@ -51,8 +56,9 @@ def test_polars_snake_casing(benchmark):
 
 
 @pytest.mark.benchmark(group="snake")
-def test_naive_python_snake_casing(benchmark):
-    df = get_df()
+@pytest.mark.parametrize("N", SIZES)
+def test_naive_python_snake_casing(benchmark, N):
+    df = get_df(N)
     benchmark(
         lambda df: df.with_columns(
             snake_case=pl.col("random_sentence").map_elements(
