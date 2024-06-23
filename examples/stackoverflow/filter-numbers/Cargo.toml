@@ -1,0 +1,13 @@
+[package]
+name = "filter-numbers"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+polars = { version = "0.41.0", features = [
+    "lazy",
+    "parquet",
+    "regex",
+    "string_to_integer",
+    "strings",
+], git = "https://github.com/pola-rs/polars" }
