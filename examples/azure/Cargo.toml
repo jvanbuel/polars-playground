@@ -10,13 +10,7 @@ azure_core = "0.15.0"
 futures-util = "0.3.28"
 log = "0.4.20"
 object_store = "0.7.0"
-polars = { version = "0.33.2", features = [
-    "azure",
-    "csv",
-    "polars-io",
-    "cloud",
-    "parquet",
-] }
+polars = { version = "0.33.2", features = ["azure", "csv", "polars-io", "cloud", "parquet", "lazy"] }
 polars-io = "0.33.2"
 simplelog = "0.12.1"
 tokio = { version = "1.33.0", features = ["macros", "rt-multi-thread"] }

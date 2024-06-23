@@ -21,14 +21,14 @@ async fn main() -> Result<(), PolarsError> {
         .with_use_azure_cli(true)
         .build()?;
 
-    let data = object_store.get(&Path::from("input.csv")).await?;
+    let data = object_store.get(&Path::from("charts.csv")).await?;
 
     let df = CsvReader::new(std::io::Cursor::new(data.bytes().await?))
         .infer_schema(Some(100))
         .has_header(true)
         .finish()?;
 
-    println!("{:?}", df);
+    println!("{:?}", df.lazy().select([count()]).collect()?);
 
     info!("Done!");
     Ok(())

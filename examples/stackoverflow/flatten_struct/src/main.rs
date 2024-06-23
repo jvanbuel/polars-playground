@@ -1,5 +1,7 @@
+use polars::datatypes;
 use polars::prelude::*;
 
+#[derive(Debug)]
 struct Record {
     field1: String,
     field2: i32,
@@ -46,5 +48,7 @@ fn main() -> PolarsResult<()> {
     // │ val2   ┆ 2      │
     // └────────┴────────┘
 
+    let records: Vec<Record> = df.into_struct("test").into_series().iter().collect();
+    println!("{:?}", records);
     Ok(())
 }

@@ -1,0 +1,11 @@
+[package]
+name = "unnest-json"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+polars = { version = "^0.35.4", features = ["lazy", "dtype-struct", "strings", "extract_jsonpath"] }
+polars-ops = { version = "0.35.4", features = ["extract_jsonpath"] }
+polars-plan = { version = "^0.35.4", features = ["json"] }
